@@ -6,6 +6,8 @@ import Daughter from './pages/daughter';
 import Son2 from './pages/Son2';
 import Daughter2 from './pages/Daughter2';
 import Input from './pages/input/Input';
+import Products from './pages/products/Products';
+import Total from './pages/total/Total';
 
 
 function App() {
@@ -33,22 +35,20 @@ function App() {
   return (
 
     <div >
-      <Input samaanthap={setProducts}
+      <Input 
+      samaanthap={setProducts}
       setMyproduct={setMyproduct}
-      mailelekhekoproduct={myProduct}/>
+      mailelekhekoproduct={myProduct}
+      saaman={products}
+      />
       
-      {products.map((product, index) => (
-        <React.Fragment key={product.id} >
-          <div
-            style={{ backgroundColor: "lavender", marginBottom: "10px", padding: "10px" }}
+      <Products saaman={products}
+      saamanhata={deleteProduct}
+      />
 
-          >
-            This is title:{product.name}
-          </div>
-          <button style={{ backgroundColor: "red" }}
-            onClick={()=>ndeleteProduct(product.id)}>Delete</button>
-        </React.Fragment>
-      ))}
+      <Total products={products}
+      />
+
 
       {/* <Son meroBhag={jagga}/>
      <Daughter meroProperty={jagga}/> */}
