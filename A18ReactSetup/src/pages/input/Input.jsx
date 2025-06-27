@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Input = ({samaanthap, setMyproduct, mailelekhekoproduct}) => {
+const Input = ({samaanthap, setMyproduct, mailelekhekoproduct, saaman}) => {
   return (
     <div>
       <div style={{ display: "flex" }}>
@@ -10,7 +10,7 @@ const Input = ({samaanthap, setMyproduct, mailelekhekoproduct}) => {
                 onClick={() => {
                   if (mailelekhekoproduct !== "")
                     // console.log("clicked")
-                    samaanthap([...products,
+                    samaanthap([...saaman,
                     { id: new Date().getTime(), 
                     name: mailelekhekoproduct,
                     price: 200 },])
